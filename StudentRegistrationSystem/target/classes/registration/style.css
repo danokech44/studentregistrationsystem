@@ -1,0 +1,335 @@
+/* Root background */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #f0f4f8, #d9e2ec);
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* Main title styling */
+.header-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3c72;
+    -fx-padding: 10 0 10 0;
+}
+
+/* TitledPane styling */
+.titled-pane {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #b0c4de;
+    -fx-border-width: 1;
+}
+
+.titled-pane > .title {
+    -fx-background-color: linear-gradient(to right, #1e3c72, #2a5298);
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 8 15 8 15;
+}
+
+.titled-pane > .title > .text {
+    -fx-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Expanded content area to give tables/lists room */
+.titled-pane > .content {
+    -fx-background-color: white;
+    -fx-background-radius: 0 0 8 8;
+    -fx-border-radius: 0 0 8 8;
+    -fx-padding: 15;
+    -fx-max-height: Infinity;  /* Allow content to grow */
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 13px;
+    -fx-font-weight: normal;
+}
+
+/* Text fields */
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-color: #b0c4de;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 13px;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.05), 3, 0, 0, 1);
+}
+
+.text-field:focused {
+    -fx-border-color: #2a5298;
+    -fx-border-width: 2;
+    -fx-background-color: #f8fbfe;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: linear-gradient(to bottom, #2a5298, #1e3c72);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 5;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #3a6ab5, #2a5298);
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #1e3c72, #142b4e);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0, 0, 1);
+}
+
+.button:default {
+    -fx-background-color: linear-gradient(to bottom, #27ae60, #1e8449);
+}
+
+/* TableView styling - expanded for ample data display */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #b0c4de;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 2);
+    -fx-min-height: 180px;      /* Minimum height to show several rows */
+    -fx-pref-height: 280px;     /* Preferred larger height */
+    -fx-max-height: Infinity;   /* Allow unlimited growth */
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #2a5298, #1e3c72);
+    -fx-background-radius: 8 8 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 0 0 0 10;
+}
+
+/* Taller rows for better readability */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #e0e6ed;
+    -fx-table-cell-border-color: #e0e6ed;
+    -fx-cell-size: 42px;        /* Increased from 35px */
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #d4e0f0;
+    -fx-text-fill: #1e3c72;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e8eff8;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+/* Column minimum width to avoid cramped data */
+.table-view .table-column {
+    -fx-min-width: 100px;
+    -fx-pref-width: 130px;      /* Give each column comfortable width */
+}
+
+/* ComboBox styling */
+.combo-box {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-color: #b0c4de;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-padding: 2;
+}
+
+.combo-box:hover {
+    -fx-border-color: #2a5298;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 13px;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #b0c4de;
+    -fx-border-radius: 5;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #e8eff8;
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: #2a5298;
+    -fx-text-fill: white;
+}
+
+/* ListView styling - ample space for enrolled courses */
+.list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #b0c4de;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+    -fx-min-height: 160px;      /* Minimum height for enrolled courses list */
+    -fx-pref-height: 260px;     /* Preferred larger height */
+    -fx-max-height: Infinity;
+}
+
+/* Taller list cells for easy reading */
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 13px;
+    -fx-padding: 10 12 10 12;   /* Increased vertical padding */
+    -fx-min-height: 42px;       /* Ensure consistent cell height */
+}
+
+.list-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+
+.list-cell:selected {
+    -fx-background-color: #d4e0f0;
+    -fx-text-fill: #1e3c72;
+    -fx-font-weight: bold;
+}
+
+.list-cell:hover {
+    -fx-background-color: #e8eff8;
+}
+
+/* VBox and HBox spacing - increase for visual breathing room */
+.vbox, .hbox {
+    -fx-spacing: 15;            /* Increased from 10 */
+}
+
+/* Alert dialogs */
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-border-color: #2a5298;
+    -fx-border-width: 2;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: linear-gradient(to right, #1e3c72, #2a5298);
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #2a5298;
+    -fx-text-fill: white;
+}
+
+/* Status bar (if added) */
+.status-bar {
+    -fx-background-color: #1e3c72;
+    -fx-padding: 5;
+}
+
+.status-bar .label {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+
+/* Tooltip */
+.tooltip {
+    -fx-background-color: #1e3c72;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-background-radius: 4;
+    -fx-padding: 5 10 5 10;
+}
+
+/* Special button styles */
+.button.danger {
+    -fx-background-color: #c0392b;
+}
+.button.danger:hover {
+    -fx-background-color: #e74c3c;
+}
+.button.warning {
+    -fx-background-color: #e67e22;
+}
+.button.warning:hover {
+    -fx-background-color: #f39c12;
+}
+/* Main ScrollPane styling */
+.main-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.main-scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Vertical scrollbar styling */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 12px;
+    -fx-padding: 0;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #e0e6ed;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #2a5298;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-pref-width: 10px;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #1e3c72;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}

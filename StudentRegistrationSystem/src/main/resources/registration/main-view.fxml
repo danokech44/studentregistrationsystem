@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="registration.controller.MainController"
+            stylesheets="@style.css">
+    <content>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <!-- Add Student Form -->
+            <TitledPane text="Add New Student" collapsible="false">
+                <GridPane hgap="10" vgap="10">
+                    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                    <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Student Number:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="studentNumberField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Fee Balance:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="feeBalanceField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Button text="Add Student" onAction="#handleAddStudent" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                </GridPane>
+            </TitledPane>
+
+            <!-- Students Table -->
+            <TitledPane text="Student List" collapsible="false">
+                <VBox spacing="5">
+                    <TableView fx:id="studentTable">
+                        <columns>
+                            <TableColumn text="Student Number" fx:id="colStudentNumber"/>
+                            <TableColumn text="Name" fx:id="colName"/>
+                            <TableColumn text="Fee Balance" fx:id="colFeeBalance"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10">
+                        <Button text="Refresh" onAction="#handleRefresh"/>
+                        <Button text="Delete Selected Student" onAction="#handleDeleteStudent" style="-fx-background-color: #c0392b;"/>
+                    </HBox>
+                </VBox>
+            </TitledPane>
+
+            <!-- Enrollment Section -->
+            <TitledPane text="Course Enrollment" collapsible="false">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                    <Label text="Select Course:"/>
+                    <ComboBox fx:id="courseComboBox" prefWidth="200"/>
+                    <Button text="Enroll" onAction="#handleEnroll"/>
+                </HBox>
+            </TitledPane>
+
+            <!-- Enrolled Courses View -->
+            <TitledPane text="Enrolled Courses (Select a student)" collapsible="false">
+                <VBox spacing="5">
+                    <TableView fx:id="enrolledCoursesTable" prefHeight="150">
+                        <columns>
+                            <TableColumn text="Course Name" fx:id="colCourseName" prefWidth="250"/>
+                        </columns>
+                    </TableView>
+                    <Button text="Drop Selected Course" onAction="#handleDropCourse" style="-fx-background-color: #e67e22;"/>
+                </VBox>
+            </TitledPane>
+        </VBox>
+    </content>
+</ScrollPane>
